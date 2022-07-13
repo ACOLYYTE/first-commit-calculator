@@ -1,10 +1,12 @@
 package Calculator;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         double ArgumentOne=sc.nextDouble();
         String Operator =sc.next();
@@ -23,7 +25,10 @@ public class Main {
         FileReader fr = new FileReader("src/Calculator/input.txt");
         Scanner scan = new Scanner(fr);
         while(scan.hasNextLine()){System.out.println(scan.nextLine());}
-
+        fr.close();
+        FileWriter fw = new FileWriter("src/Calculator/output.txt");
+        fw.write("holy fuck");
+        fw.close();
 
 
     }
